@@ -28,8 +28,5 @@ public class Course {
         return this.tutor;
     }
 
-    public Course(String title, String tutor) {
-        this.title = title;
-        this.tutor = tutor;
-    }
+
 }
