@@ -2,6 +2,7 @@ package com.study.ex02;
 
 import com.study.ex02.domain.Course;
 import com.study.ex02.domain.CourseRepository;
+import com.study.ex02.domain.CourseRequestDto;
 import com.study.ex02.service.CourseService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -32,8 +33,8 @@ public class Ex02Application {
                 System.out.println(course.getTutor());
             }
 
-            Course new_course = new Course("중급개발자", "장창훈");
-            courseService.update(1L, new_course);
+            CourseRequestDto requestDto = new CourseRequestDto("중급개발자", "장창훈");
+            courseService.update(1L, requestDto);
             courseList = courseRepository.findAll();
             for (int i=0; i<courseList.size(); i++) {
                 Course course = courseList.get(i);
