@@ -269,7 +269,15 @@
         // 메모를 불러와서 보여줍니다.
         function getMessages() {
             // 1. 기존 메모 내용을 지웁니다.
+            $('#cards-box').empty();
             // 2. 메모 목록을 불러와서 HTML로 붙입니다.
+            $.ajax({
+                type: '',
+                url: '/api/memos',
+                success: function (response) {
+
+                }
+            })
         }
 
         // 메모 하나를 HTML로 만들어서 body 태그 내 원하는 곳에 붙입니다.
