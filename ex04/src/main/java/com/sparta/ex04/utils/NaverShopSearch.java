@@ -26,5 +26,6 @@ public class NaverShopSearch {
         NaverShopSearch naverShopSearch = new NaverShopSearch();
         naverShopSearch.search();
     }
+
 }
 
