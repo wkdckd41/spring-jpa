@@ -1,10 +1,11 @@
 package com.sparta.ex04.utils;
 
+import org.json.JSONObject;
 import org.springframework.http.*;
 import org.springframework.web.client.RestTemplate;
 
 public class NaverShopSearch {
-    public String search() {
+    public String search(String query) {
         RestTemplate rest = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         headers.add("X-Naver-Client-Id", "MWBV14iNr5iH7TzNqEv2");
@@ -24,8 +25,9 @@ public class NaverShopSearch {
 
     public static void main(String[] args) {
         NaverShopSearch naverShopSearch = new NaverShopSearch();
-        naverShopSearch.search();
+        String result = naverShopSearch.search("아이맥");
+        JSONObject rjson = new JSONObject(result);
+        System.out.println(rjson);
     }
-
 }
 
