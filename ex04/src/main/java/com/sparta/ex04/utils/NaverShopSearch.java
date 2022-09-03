@@ -1,5 +1,6 @@
 package com.sparta.ex04.utils;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.http.*;
 import org.springframework.web.client.RestTemplate;
@@ -27,7 +28,11 @@ public class NaverShopSearch {
         NaverShopSearch naverShopSearch = new NaverShopSearch();
         String result = naverShopSearch.search("아이맥");
         JSONObject rjson = new JSONObject(result);
-        System.out.println(rjson);
+        JSONArray items = rjson.getJSONArray("items");
+        for (int i = 0; i<items.length(); i++) {
+            JSONObject itemJson = items.getJSONObject(i);
+            System.out.println(itemJson);
+        }
     }
 }
 
