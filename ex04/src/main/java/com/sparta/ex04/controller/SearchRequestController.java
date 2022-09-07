@@ -17,7 +17,7 @@ public class SearchRequestController {
 
     @GetMapping("/api/search")
     public List<ItemDto> getItems(@RequestParam String query) {
-        String resultString = naverShopSearch.search(query);
-        return naverShopSearch.fromJSONtoItems(resultString);
+        String result = naverShopSearch.search(query);
+        return naverShopSearch.fromJSONtoItems(result);
     }
 }
